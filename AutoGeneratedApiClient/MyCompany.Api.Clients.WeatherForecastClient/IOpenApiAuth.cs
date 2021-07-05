@@ -4,8 +4,8 @@ using System.Text;
 
 namespace MyCompany.Api.Clients.WeatherForecastClient
 {
-	public partial class WeatherForecastClient
+	public interface IOpenApiAuth
 	{
-		public string BaseUrl { get; set; }
+		void UseUserAuth(string userName, string password);
 	}
 }

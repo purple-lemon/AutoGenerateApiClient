@@ -12,7 +12,7 @@ namespace WeatherApiConsoleCheck
 			Console.ReadLine();
 			IWeatherForecastClient apiClient = new WeatherForecastClient("http://localhost:5000");
 			var forecasts = await apiClient.GetAllAsync();
-
+			apiClient.UseUserAuth("admin", "321123");
 			var resultOfAdding = await apiClient.AddAsync(new AddWeatherData()
 			{
 				Kind = TemperatureType.Celcium,
